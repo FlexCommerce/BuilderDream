@@ -1,0 +1,54 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="companyheader clearfix">
+          {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+          {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+        <div class="menu-sz">
+          {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+        </div>        
+    </div>
+</header>
+
+<section>
+  <div class="main wrapper clearfix">
+    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+  </div>
+</section>
+
+<div class="main wrapper clearfix">
+        <div class="responsivecolumns columns-two-75-25 clearfix">
+            <div class="column columns-two-left">
+              {{widget('content', 'a1-header', {"content":"<h3>Lorem ipsum at</h3>"})|raw}}
+              {{widget('content', 'a1-content', {"content":"<p>Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend</p>"})|raw}}
+              {{widget('button', 'a1-button', {text:'SHOW SITE', 'align':'widget-align-center'})|raw}}
+            </div>
+            <div class="column columns-two-right">
+                {{widget('content', 'a2-header', {"content":"<h3>Lorem ipsum at</h3>"})|raw}}
+                {{widget('content', 'a2-content', {"content":"<p>Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend</p>"})|raw}}              
+            </div>
+        </div>
+</div>  
+<div class="wrapper clearfix">
+  {{zone('main')|raw}}
+</div>
+<footer class="bk-footer sz-footer">
+  <div class="wrapper clearfix sz-footer-inner">
+    <div class="responsivecolumns columns-two-50-50">
+      <div class="column columns-two-left">
+        {{widget('profile', 'f-address', { 'profileType':'address', 'address':'profile'})|raw}}
+      </div>
+      <div class="column columns-two-right">
+      {{widget('profile', 'f-socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+      </div>
+      <div class="clearfix">  
+        {{widget('profile', 'f-copyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+      </div>
+  </div>
+</footer>
+
+{% endblock %}
